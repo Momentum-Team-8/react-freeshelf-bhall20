@@ -132,9 +132,10 @@ export const Book = (props) => {
       <h1>{title}</h1>
       <h2>{author}</h2>
       <p>{shortDescription}</p>
-      <p>{coverImageUrl}</p>
+      <img src={coverImageUrl} alt='coverImage' />
     </div>
   );
 };
 
 export default App;
+
