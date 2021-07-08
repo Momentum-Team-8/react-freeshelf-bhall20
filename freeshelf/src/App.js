@@ -62,7 +62,7 @@ export const App = () => {
       shortDescription:
         "In Clojure for the Brave and True, you'll learn to wield this awesome language to its fullest!",
       coverImageUrl:
-        "http://nostarch.com/sites/default/files/styles/uc_product/public/clojure_cover-front_final.png",
+        "https://nostarch.com/sites/default/files/styles/uc_product/public/clojure_cover-front_final.png",
       publisher: "No Starch Press",
       publicationDate: "2015",
       detailedDescription:
@@ -132,7 +132,7 @@ export const Book = (props) => {
       <h1>{title}</h1>
       <h2>{author}</h2>
       <p>{shortDescription}</p>
-      <img src={coverImageUrl} alt='coverImage' />
+      <img src={coverImageUrl} alt='coverImage' class='images' />
     </div>
   );
 };
