@@ -151,10 +151,10 @@ export const Book = (props) => {
         <p>{shortDescription}</p>
         <img src={coverImageUrl} alt="coverImage" className="images" />
       </div>
-      <button onClick={handleExpanded}> More Information</button>
+      <button className='button' onClick={handleExpanded}>{expanded ? 'Less Information' : 'More Information'}</button>
       {expanded && (
         <>
-          <p>{url}</p>
+          <a href={url}>{url}</a>
           <p>{publisher}</p>
           <p>{publicationDate}</p>
           <p>{detailedDescription}</p>
