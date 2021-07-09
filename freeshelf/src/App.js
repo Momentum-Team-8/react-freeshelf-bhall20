@@ -1,9 +1,8 @@
-import React, { useState } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React, { useState } from 'react'
+import './App.css'
 
 export const App = () => {
-  const [books, setBooks] = useState([
+  const [books] = useState([
     {
       title: "You Don't Know JS Yet: Getting Started",
       author: "Kyle Simpson",
@@ -118,24 +117,51 @@ export const App = () => {
             coverImageUrl={read.coverImageUrl}
             key={idx}
             id={idx}
+            url={read.url}
+            publisher={read.publisher}
+            publicationDate={read.publicationDate}
+            detailedDescription={read.detailedDescription}
           />
-        );
+        )
       })}
     </main>
-  );
-};
+  )
+}
 
 export const Book = (props) => {
-  const { title, author, shortDescription, coverImageUrl } = props;
+  const [expanded, setExpanded] = useState(false);
+  const {
+    title,
+    author,
+    shortDescription,
+    coverImageUrl,
+    url,
+    publisher,
+    publicationDate,
+    detailedDescription,
+  } = props;
+  const handleExpanded = () => {
+    setExpanded(!expanded);
+  }
   return (
     <div>
-      <h1>{title}</h1>
-      <h2>{author}</h2>
-      <p>{shortDescription}</p>
-      <img src={coverImageUrl} alt='coverImage' class='images' />
+      <div>
+        <h1>{title}</h1>
+        <h2>{author}</h2>
+        <p>{shortDescription}</p>
+        <img src={coverImageUrl} alt="coverImage" className="images" />
+      </div>
+      <button onClick={handleExpanded}> More Information</button>
+      {expanded && (
+        <>
+          <p>{url}</p>
+          <p>{publisher}</p>
+          <p>{publicationDate}</p>
+          <p>{detailedDescription}</p>
+        </>
+      )}
     </div>
-  );
-};
+  )
+}
 
-export default App;
-
+export default App
